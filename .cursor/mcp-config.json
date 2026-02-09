@@ -1,0 +1,28 @@
+{
+  "mcp_servers": {
+    "context7": {
+      "type": "stdio",
+      "command": "npx",
+      "args": ["@context7/mcp-server"],
+      "description": "Context7 MCP Server for real-time documentation",
+      "enabled": true,
+      "env": {
+        "NODE_ENV": "development"
+      }
+    }
+  },
+  "resources": {
+    "specification": {
+      "path": ".specify/",
+      "description": "SDD specifications and plans"
+    },
+    "documentation": {
+      "path": "docs/",
+      "description": "Project documentation"
+    },
+    "source": {
+      "path": "src/",
+      "description": "Source code"
+    }
+  }
+}

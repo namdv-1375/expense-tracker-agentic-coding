@@ -1,36 +1,59 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Expense Tracker - Ứng dụng Quản lý Chi tiêu Cá nhân
 
-## Getting Started
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+![Node](https://img.shields.io/badge/node-%3E%3D20.9.0-green)
+![Tests](https://img.shields.io/badge/tests-71%2F71%20PASSED-brightgreen)
 
-First, run the development server:
+## 🚀 Quick Start
 
+### 1. Chuẩn bị
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Cài Node.js 20
+nvm install 20
+nvm use 20
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Cài đặt
+```bash
+git clone https://github.com/yourusername/expense-tracker.git
+cd expense-tracker
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Cấu hình
+```bash
+cp .env.local.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Setup Database
+```bash
+supabase login
+supabase link --project-ref your-project-ref
+supabase migration up
+```
 
-## Learn More
+### 5. Chạy
+```bash
+npm run dev
+# Mở http://localhost:3000
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 📦 Tech
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Frontend**: Next.js 16 • React 19 • TypeScript • Tailwind CSS
+- **Backend**: Next.js API Routes • Supabase
+- **Database**: PostgreSQL (Supabase)
+- **Testing**: Node.js tests (71 automated)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📝 npm Scripts
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run dev              # Start dev server
+npm run build            # Production build
+npm test                 # Run all 71 tests
+npm run test:basic       # File structure (31 tests)
+npm run test:unit        # Components (23 tests)
+npm run test:integration # API routes (17 tests)
+npm run lint             # ESLint check
+npm run type-check       # TypeScript check
+```

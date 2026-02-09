@@ -1,0 +1,141 @@
+# SDD (Spec Driven Development) Workflow Guidelines
+
+## Overview
+SDD là một phương pháp phát triển phần mềm dựa trên đặc tả (Specification Driven Development). Qui trình này đảm bảo yêu cầu được rõ ràng trước khi bắt đầu lập trình.
+
+## Workflow Gated Progression
+
+### 1. 📋 **SPECIFY Phase**
+- Viết lại yêu cầu chi tiết từ Spec
+- Định nghĩa User Stories
+- Liệt kê Features cần thiết
+- Xác định Success Criteria
+
+**Checklist:**
+- [ ] Tất cả yêu cầu đã được ghi lại
+- [ ] Acceptance Criteria rõ ràng
+- [ ] Dependencies đã được xác định
+
+### 2. 🎯 **PLAN Phase**
+- Thiết kế kiến trúc hệ thống
+- Lập kế hoạch triển khai
+- Xác định Technology Stack
+- Chia công việc thành Tasks
+
+**Checklist:**
+- [ ] Architecture diagram hoàn tất
+- [ ] Tech stack đã quyết định
+- [ ] Timeline rõ ràng
+- [ ] Risk assessment hoàn tất
+
+### 3. ✅ **ANALYZE Phase**
+- Phân tích Dependencies
+- Review Feasibility
+- Kiểm tra Resource Requirements
+
+### 4. 🛠️ **IMPLEMENT Phase**
+- Tạo code theo specification
+- Tuân theo coding standards
+- Implement features từng cái một
+
+**Guidelines:**
+- Mỗi feature = một commit
+- Viết Unit Tests
+- Follow TypeScript best practices
+- Sử dụng ESLint
+
+### 5. 🧪 **TEST Phase**
+- Unit Testing
+- Integration Testing
+- E2E Testing
+- Performance Testing
+
+### 6. 📦 **DEPLOY Phase**
+- Staging environment
+- Production deployment
+- Monitoring & Logging
+
+## SpecKit Plus Commands
+
+```bash
+# Initialize project with SDD workflow
+specifyplus init my-project
+
+# Generate specification from requirements
+sp.specify "Requirement description"
+
+# Create implementation plan
+sp.plan "Feature description"
+
+# Create tasks from plan
+sp.tasks "Plan details"
+
+# Analyze implementation
+sp.analyze "Implementation details"
+
+# Check SDD status
+specifyplus check
+
+# Validate workflow progression
+specifyplus validate
+```
+
+## Best Practices
+
+1. **Always Start with Spec**: Never code without clear specifications
+2. **Document Everything**: Maintain clear documentation throughout
+3. **Use Git Effectively**: Each phase should have commits
+4. **Review Before Proceed**: Each phase needs review before moving to next
+5. **Keep Specs Updated**: Update specs as you learn more
+
+## Project Structure for SDD
+
+```
+project/
+├── .cursor/
+│   ├── rules/                    # Cursor rules & guidelines
+│   │   ├── sdd-workflow.mdc      # This file
+│   │   └── coding-standards.mdc
+│   └── commands/                 # SpecKit commands
+├── .specify/                     # SpecKit specifications
+│   ├── constitution.md           # Project constitution
+│   ├── specs/                    # Detailed specifications
+│   ├── plans/                    # Implementation plans
+│   └── templates/                # Custom templates
+├── src/                          # Source code
+├── docs/                         # Documentation
+├── tests/                        # Test files
+└── .env.local                    # Environment variables
+```
+
+## Environment Setup for SDD
+
+```bash
+# Install Python 3.12+ (required for SpecKit Plus)
+python --version  # Must be >= 3.12
+
+# Install SpecKit Plus
+pip install specifyplus
+
+# Verify installation
+specifyplus --version
+
+# Initialize SDD workflow in existing project
+specifyplus init --existing-project
+```
+
+## Continuous SDD Process
+
+Each sprint follows this cycle:
+1. **Clarify** → Refine specifications with team
+2. **Design** → Create architecture & implementation plan
+3. **Code** → Implement according to spec
+4. **Test** → Validate against acceptance criteria
+5. **Review** → Code review & spec verification
+6. **Deploy** → Release to production
+7. **Monitor** → Track metrics & gather feedback
+
+## References
+- [SpecKit Plus Documentation](https://agentfactory.panaversity.org/docs/SDD-RI-Fundamentals/spec-kit-plus-hands-on/)
+- [Cursor IDE Documentation](https://cursor.com/docs)
+- [Model Context Protocol (MCP)](https://cursor.com/docs/context/mcp)
